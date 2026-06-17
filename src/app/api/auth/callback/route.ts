@@ -10,5 +10,13 @@ const session = await scalekit.authenticateWithCode(
   code,
   redirectUri
 );
-NextResponse.redirect(`${process.env.NEXT_PUBLIC_APP_URL}`)
+console.log(session);
+const response = NextResponse.redirect(`${process.env.NEXT_PUBLIC_APP_URL}`);
+response.cookies.set("Access_Token",session.accessToken,{
+  httpOnly:true,
+  maxAge:24*60*60*1000,
+  secure:false,
+  path:"/"
+})
+return response;
     }
