@@ -1,4 +1,4 @@
-import { scalekit } from '@/app/lib/scalekit'
+import { scalekit } from '@/lib/scalekit'
 import {NextRequest, NextResponse} from "next/server";
 export async function GET(req:NextRequest) {
      const{searchParams}= new URL(req.url)
