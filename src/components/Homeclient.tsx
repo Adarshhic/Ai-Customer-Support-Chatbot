@@ -358,7 +358,7 @@ function HomeClient({ email }: { email?: string }) {
           </div>
         ) : (
           <button className="nav-login-btn" onClick={handleLogin} disabled={loading}>
-            Login
+          
             {loading?"Loading...":"Login"}
           </button>
         )}
